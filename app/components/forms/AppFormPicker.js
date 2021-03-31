@@ -1,20 +1,21 @@
-import React from "react";
+import { useFormikContext } from 'formik';
+import React from 'react';
+import AppPicker from '../AppPicker';
+import AppErrorMessage from './AppErrorMessage';
 
-function AppFormPicker(props) {
+function AppFormPicker({ items, name, placeholder }) {
+  const { errors, setFieldValue, touched, values } = useFormikContext();
   return (
     <>
-      <AppTextInput
-        icon="lock"
-        autoCapitalize="none"
-        autoCorrect={false}
-        placeholder="password"
-        secureTextEntry
-        onBlur={() => {
-          setFieldTouched("password");
+      <AppPicker
+        items={items}
+        onSelectItem={(item) => {
+          setFieldValue(name, item);
         }}
-        onChangeText={handleChange("password")}
+        placeholder={placeholder}
+        selectedItem={values[name]}
       />
-      <AppErrorMessage error={errors.password} visible={touched.password} />
+      <AppErrorMessage error={errors[name]} visible={touched[name]} />
     </>
   );
 }

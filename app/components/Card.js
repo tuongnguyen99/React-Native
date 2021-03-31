@@ -8,8 +8,8 @@ function Card({ title, subTitle, image }) {
       <Image style={styles.image} source={image} resizeMode="cover" />
 
       <View style={styles.detailsContainer}>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.subTitle}>{subTitle}</Text>
+        <Text style={styles.title} numberOfLines={2}>{title}</Text>
+        <Text style={styles.subTitle} numberOfLines={1}>{subTitle}</Text>
       </View>
     </View>
   );

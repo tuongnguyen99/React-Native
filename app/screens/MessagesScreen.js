@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { FlatList } from "react-native";
-import ListItem from "../components/ListItem";
-import ListItemDeleteAction from "../components/ListItemDeleteAction";
+import ListItem from "../components/lists/ListItem";
+import ListItemDeleteAction from "../components/lists/ListItemDeleteAction";
 import Screen from "../components/Screen";
-import Separator from "../components/Separator";
+import Separator from "../components/lists/Separator";
 
 function MessagesScreen(props) {
   const [messages, setMessages] = useState([
@@ -43,6 +43,7 @@ function MessagesScreen(props) {
               image={item.image}
               title={item.title}
               subTitle={item.description}
+              showChevrons
               renderRightActions={() => {
                 return (
                   <ListItemDeleteAction
