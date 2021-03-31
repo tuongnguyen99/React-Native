@@ -19,7 +19,7 @@ import TestScreen from "./app/screens/TestScreen";
 export default function App() {
   const [category, setCategory] = useState();
   return (
-    <MessagesScreen
+    <ListingEditScreen
      />
   );
 }
