@@ -7,7 +7,7 @@ import defaultStyles from '../config/styles';
 
 function AppTextInput({ icon, width = '100%', ...props }) {
   return (
-    <View style={[styles.container, {width}]}>
+    <View style={[styles.container, { width }]}>
       {icon && (
         <MaterialCommunityIcons
           name={icon}
@@ -16,7 +16,11 @@ function AppTextInput({ icon, width = '100%', ...props }) {
           style={styles.icon}
         />
       )}
-      <TextInput style={[defaultStyles.text, { flex: 1 }]} {...props} placeholderTextColor={colors.medium}/>
+      <TextInput
+        style={[defaultStyles.text, { flex: 1 }]}
+        {...props}
+        placeholderTextColor={colors.medium}
+      />
     </View>
   );
 }

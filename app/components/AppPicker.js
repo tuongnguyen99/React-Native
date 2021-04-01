@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Button, Modal, StyleSheet, View } from 'react-native';
 import {
   FlatList,
-  TouchableWithoutFeedback,
+  TouchableWithoutFeedback
 } from 'react-native-gesture-handler';
 import colors from '../config/colors';
 import AppText from './AppText';

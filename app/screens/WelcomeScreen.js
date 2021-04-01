@@ -1,9 +1,13 @@
+import { useNavigation } from "@react-navigation/core";
 import React from "react";
 import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
 import AppButton from "../components/AppButton";
 import colors from "../config/colors";
+import routes from "../navigation/routes";
+
 
 function WelcomeScreen() {
+  const navigation = useNavigation();
   return (
     <ImageBackground
       source={require("../assets/background.jpg")}
@@ -15,8 +19,12 @@ function WelcomeScreen() {
         <Text style={styles.tagline}>Sell What You Don't Want</Text>
       </View>
       <View style={styles.buttonsContainer}>
-        <AppButton title="login" color="primary" />
-        <AppButton title="resgister" color="secondary" />
+        <AppButton title="login" color="primary" onPress={() => {
+          navigation.navigate(routes.LOGIN);
+        }}/>
+        <AppButton title="resgister" color="secondary" onPress={() => {
+          navigation.navigate(routes.REGISTER);
+        }}/>
       </View>
     </ImageBackground>
   );

@@ -4,23 +4,16 @@ import { AppForm, AppFormField, SubmitButton } from '../components/forms';
 import * as Yup from 'yup';
 import Screen from '../components/Screen';
 
-// const validationScheme = Yup.object().shape({
-//   name: Yup.string().min(1).required(),
-// });
-
 const validationScheme = Yup.object().shape({
-  name: Yup.string().min(1).required()
-})
+  name: Yup.string().min(1).required(),
+});
 
 const handleSubmit = (values) => {};
 
 function TestScreen() {
   return (
     <Screen style={styles.container}>
-      <AppForm
-        initialValues={{ name: ''}}
-        validationSchema={validationScheme}
-      >
+      <AppForm initialValues={{ name: '' }} validationSchema={validationScheme}>
         <AppFormField
           name="name"
           icon="account"
